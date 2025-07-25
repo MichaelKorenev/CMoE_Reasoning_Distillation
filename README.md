@@ -145,8 +145,9 @@ CMoE_Reasoning_Distillation/
 │   └── only_correct_eval_results_social_humanities_qwen14b.jsonl
 │
 ├── inference/                           # Инференс обученных моделей
-│   ├── Final_inference.ipynb            # Финальный инференс
-│
+│   ├── qdrant_inference.ipynb           # Инференс модели с rag
+│   ├── qwen1.7b_inference.ipynb          
+│   └── qwen_4b_inference.ipynb
 │
 ├── llama70b/                            # Данные рассуждений от Llama3.3-70B
 │   ├── category_1_math_cs_llama.jsonl
