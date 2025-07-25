@@ -91,7 +91,7 @@
 
 **Результат**: При ограниченных ресурсах эффективность KARD резко снижается и приводит к "зашумлению" нерелевантным контекстом (33.4% правильных ответов при 200k статей с Wikipedia в контексте Qdrant)
 
-![KARD архитектура](images/kard_arhc.png)
+![KARD архитектура](images/kard_arch.png)
 
 **Ссылка на статью**: [Knowledge-Augmented Reasoning Distillation for Small Language Models in Knowledge-Intensive Tasks](https://arxiv.org/abs/2305.18395)
 
@@ -100,7 +100,7 @@
 - **ruT5-large (737M)**: 27.91% правильных ответов
 - **VikhrT5-3B**: 0.33% правильных ответов (с добавлением спецтокенов в токенайзер)
 
-![seq2seq results](images/kard_arhc.png)
+![seq2seq results](images/seq2seq_res.png)
 
 
 ## Выводы
