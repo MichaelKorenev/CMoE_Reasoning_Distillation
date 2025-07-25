@@ -1,0 +1,51 @@
+# Имя задания
+name: t-pro-generation
+# Описание задания
+desc: Генерация ответов с помощью модели T-pro через Ollama
+
+# Параметры точки входа для запуска вычислений
+cmd: |
+  apt-get update
+  apt-get install -y curl wget python3 python3-pip
+  curl -fsSL https://ollama.ai/install.sh | sh
+  ollama serve &
+  sleep 15
+  ollama pull hf.co/t-tech/T-pro-it-2.0-GGUF:Q2_K
+  pip3 install -r requirements.txt
+  python3 T-pro-2.0-generation.py
+
+# Файлы с входными данными
+inputs:
+  - train.jsonl  # Абсолютный путь к файлу на локальном компьютере сохранен в переменную DATA
+  - requirements.txt  # Путь к файлу относительно директории запуска задания на локальном компьютере
+  - T-pro-2.0-generation.py  # Путь к файлу относительно директории запуска задания на локальном компьютере
+
+# Файлы с результатами
+outputs:
+  - results_tpro.jsonl  # Относительный путь к файлу сохранен в переменную RESULTS
+
+# Параметры окружения
+env:
+  vars:  # Переменные окружения
+    - OLLAMA_HOST: 0.0.0.0  # Разрешить подключения к Ollama со всех интерфейсов
+    - DATA: ./train.jsonl  # Путь к входному файлу
+  docker: 
+      image: ubuntu:focal  # Docker-образ, доступный в проекте DataSphere
+
+# Конфигурации вычислительных ресурсов для запуска задания
+cloud-instance-types:
+  - g1.1  # Приоритетная конфигурация
+
+flags:
+  - attach-project-disk
+
+# Конфигурация расширенной рабочей директории
+working-storage:
+  type: SSD  # тип используемого диска. Опционально, по умолчанию SSD. Доступные значения: SSD
+  size: 200Gb  # размер рабочей директории в интервале 100 ГБ — 10 ТБ
+
+# Конфигурация плавного завершения работы
+graceful-shutdown:
+  signal: SIGTERM  # Сигнал, который будет отправлен процессу задания при нажатии Ctrl + C (cancel), по умолчанию SIGTERM
+                   # Доступные значения: SIGTERM, SIGINT, SIGHUP, SIGUSR1, SIGUSR2
+  timeout: 30s  # Таймаут, через который процесс задания получит SIGKILL, если не успевает завершиться
