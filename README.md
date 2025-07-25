@@ -132,7 +132,7 @@
 
 ```
 CMoE_Reasoning_Distillation/
-├── data_process/                        # Обработка и подготовка данных
+├── data_processing/                        # Обработка и подготовка данных
 │   ├── clean_answer_qwen14b.ipynb       # Очистка ответов Qwen14B
 │   ├── clean_answer_qwen235b.ipynb      # Очистка ответов Qwen235B
 │   ├── json_add_domain_subject.ipynb    # Добавление доменов и предметов
@@ -147,7 +147,7 @@ CMoE_Reasoning_Distillation/
 │
 ├── inference/                           # Инференс обученных моделей
 │   ├── Final_inference.ipynb            # Финальный инференс
-│   └── KARD_inference.ipynb             # Инференс KARD модели
+│
 │
 ├── llama70b/                            # Данные рассуждений от Llama3.3-70B
 │   ├── category_1_math_cs_llama.jsonl
