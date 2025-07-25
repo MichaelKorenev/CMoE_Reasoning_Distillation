@@ -164,7 +164,8 @@ CMoE_Reasoning_Distillation/
 │
 ├── train/                               # Обучение моделей
 │   ├── autoregression/                  # Авторегрессионное обучение
-│   │   └── autoregression_train.ipynb
+    │   ├── llama_8b_train.ipynb
+│   │   └── qwen_14b_train.ipynb
 │   └── seq2seq/                         # Seq2seq обучение
 │       └── seq2seq_train.ipynb
 │
@@ -179,8 +180,12 @@ CMoE_Reasoning_Distillation/
 │   ├── qdrant_inference.ipynb           # Инференс модели с rag
 │   ├── qdrant_generation.ipynb          # Подключение rag
 │   └── qdrant_tuning.ipynb              # Обучение модели с rag
-
-
+├── yandex_gpt/
+│   ├── results_yandex_gpt.jsonl
+│   └── yagpt.py
+├── t-pro/
+│   ├── T-pro-2.0-generation.py
+│   └── config.yaml
 │
 └── README.md
 ```
