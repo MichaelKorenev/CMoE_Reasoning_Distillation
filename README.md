@@ -131,5 +131,51 @@
 ## Структура проекта
 
 ```
-
+CMoE_Reasoning_Distillation/
+├── base_folder/
+│   ├── data_process/                    # Обработка и подготовка данных
+│   │   ├── clean_answer_qwen14b.ipynb   # Очистка ответов Qwen14B
+│   │   ├── clean_answer_qwen235b.ipynb  # Очистка ответов Qwen235B
+│   │   ├── json_add_domain_subject.ipynb # Добавление доменов и предметов
+│   │   ├── jsons_merge.ipynb            # Объединение JSON файлов
+│   │   └── kard_adding_data.ipynb       # Добавление данных для KARD
+│   │
+│   ├── evaluation/                      # Результаты оценки моделей
+│   │   ├── only_correct_eval_results_math_cs_qwen14b.jsonl
+│   │   ├── only_correct_eval_results_natural_sciences_qwen14b.jsonl
+│   │   ├── only_correct_eval_results_other_qwen14b.jsonl.jsonl
+│   │   └── only_correct_eval_results_social_humanities_qwen14b.jsonl
+│   │
+│   ├── inference/                       # Инференс обученных моделей
+│   │   ├── Final_inference.ipynb        # Финальный инференс
+│   │   └── KARD_inference.ipynb         # Инференс KARD модели
+│   │
+│   ├── llama70b/                        # Данные рассуждений от Llama3.3-70B
+│   │   ├── category_1_math_cs_llama.jsonl
+│   │   ├── category_2_natural_sciences_llama.jsonl
+│   │   ├── category_3_social_humanities.jsonl
+│   │   └── category_4_other_llama.jsonl
+│   │
+│   ├── qwen235b/                        # Данные рассуждений от Qwen3-235B
+│   │   ├── category_1_math_cs_qwen.jsonl
+│   │   ├── category_2_natural_sciences_qwen.jsonl
+│   │   ├── category_3_social_humanities_qwen.jsonl
+│   │   ├── category_4_other_qwen.jsonl
+│   │   └── reasoning_data_generation.ipynb
+│   │
+│   └── train/                           # Обучение моделей
+│       ├── autoregression/              # Авторегрессионное обучение
+│       │   └── autoregression_train.ipynb
+│       └── seq2seq/                     # Seq2seq обучение
+│           └── seq2seq_train.ipynb
+│
+├── images/                              # Изображения для документации
+│   ├── baseline.png
+│   ├── cmoe_architecture.png
+│   ├── kard_arch.png
+│   ├── results_comparison.png
+│   ├── ru_llm.png
+│   └── seq2seq_res.png
+│
+└── README.md
 ```
