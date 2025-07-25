@@ -136,8 +136,7 @@ CMoE_Reasoning_Distillation/
 │   ├── clean_answer_qwen14b.ipynb       # Очистка ответов Qwen14B
 │   ├── clean_answer_qwen235b.ipynb      # Очистка ответов Qwen235B
 │   ├── json_add_domain_subject.ipynb    # Добавление доменов и предметов
-│   ├── jsons_merge.ipynb                # Объединение JSON файлов
-│   └── kard_adding_data.ipynb           # Добавление данных для KARD
+│   └── jsons_merge.ipynb                # Объединение JSON файлов
 │
 ├── evaluation/                          # Результаты оценки моделей
 │   ├── only_correct_eval_results_math_cs_qwen14b.jsonl
@@ -175,6 +174,12 @@ CMoE_Reasoning_Distillation/
 │   ├── results_comparison.png
 │   ├── ru_llm.png
 │   └── seq2seq_res.png
+├── kard/
+│   ├── qdrant_inference.ipynb           # Инференс модели с rag
+│   ├── qdrant_generation.ipynb          # Подключение rag
+│   └── qdrant_tuning.ipynb              # Обучение модели с rag
+
+
 │
 └── README.md
 ```
